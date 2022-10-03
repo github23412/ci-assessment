@@ -23,7 +23,7 @@ namespace Coterie.Api.ExceptionHelpers
 
             var appContext = context.Features.Get<IExceptionHandlerPathFeature>();
 
-            BaseExceptionResponse ex = default;
+            ExceptionResponse ex = default;
 
             switch (appContext.Error)
             {
@@ -39,7 +39,7 @@ namespace Coterie.Api.ExceptionHelpers
                     break;
             }
 
-            ex = new BaseExceptionResponse
+            ex = new ExceptionResponse
             {
                 Message = appContext.Error.Message
             };
